@@ -1,0 +1,9 @@
+<ion-modal-view>
+  <ion-content>
+    <ion-lest>
+      <ion-item><h1>关于开饭啦</h1></ion-item>
+      <ion-item ng-repeat="info in infoList"><h3>{{info.name}} ：{{info.value}}</h3></ion-item>
+    </ion-lest>
+    <button class="button button-balanced button-block" ng-click="closeModal()">关闭</button>
+  </ion-content>
+</ion-modal-view>

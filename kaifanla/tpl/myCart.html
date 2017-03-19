@@ -1,0 +1,38 @@
+<ion-header-bar>
+  <h1 class="title">购物车</h1>
+  <button class="button button-clear button-dark" ng-click="funcToggleEdit()">{{editShowMsg}}</button>
+</ion-header-bar>
+<ion-content class="has-footer">
+  <div class="list list-inset">
+    <div class="item" ng-repeat="dish in dishList">
+      <div class="row">
+        <div class="col col-33">
+          <img ng-src="img/{{dish.img_sm}}" alt="" class="img-responsive">
+        </div>
+        <div class="col col-50" ng-hide="editEnable">
+          <p>{{dish.name}}</p>
+          <p>{{dish.dishCount}}*{{dish.price}}</p>
+        </div>
+        <div class="col col-50" ng-show="editEnable">
+          <div class="row row-center">
+            <div class="col">
+              <button class="button button-small" style="vertical-align: middle" ng-click="reduceCount($index)">-</button>
+              <input type="text" style="width:15px;display: inline-block;vertical-align: middle" ng-model="dish.dishCount">
+              <button class="button button-small" style="vertical-align: middle" ng-click="addCount($index)">+</button>
+            </div>
+            <div class="col">
+              <button class="button button-small button-assertive" ng-click="cartDelete($index)" style="margin-left: 30px">删除</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ion-item>
+      <div class="text-right">
+        <p style="display:inline-block;vertical-align: middle">合计：{{sum()}}</p>
+        <button style="display:inline-block;vertical-align: middle" class="button button-balanced button-small" ng-click="jump('order',{cartData:resultList})">确定下单</button>
+      </div>
+    </ion-item>
+  </div>
+</ion-content>
+<!--<div ng-include="'tpl/include/footer.html'"></div>-->

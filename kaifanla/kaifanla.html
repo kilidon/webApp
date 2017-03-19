@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="css/kaifanla.css">
+  <script src="js/ionic.bundle.js"></script>
+  <script src="js/kaifanla.js"></script>
+  <title>kaifanla</title>
+</head>
+<body ng-controller="parentCtrl">
+<div ui-view>
+
+</div>
+<!--<ion-tabs class="tabs-icon-top">-->
+  <!--<ion-tab title="主页" icon="ion-home" on-select="jump('main')"></ion-tab>-->
+  <!--<ion-tab title="个人订单" icon="ion-person" on-select="jump('myorder')"></ion-tab>-->
+  <!--<ion-tab title="购物车" badge="5" badge-style="badge-assertive" icon="ion-ios-cart" on-select="jump('myCart')"></ion-tab>-->
+  <!--<ion-tab title="设置" icon="ion-gear-a" on-select="jump('setting')"></ion-tab>-->
+<!--</ion-tabs>-->
+<ion-tabs class="tabs-icon-top">
+  <ion-tab title="主页" icon="ion-home" ng-click="tabJump('main',0)"></ion-tab>
+  <ion-tab title="个人订单" icon="ion-person" ng-click="tabJump('myorder',1)"></ion-tab>
+  <ion-tab title="购物车" icon="ion-ios-cart" ng-click="tabJump('myCart',2)" badge="cartCount" badge-style="badge-assertive" ></ion-tab>
+  <ion-tab title="设置" icon="ion-gear-a" ng-click="tabJump('setting',3)"></ion-tab>
+</ion-tabs>
+</body>
+</html>
